@@ -10,7 +10,7 @@ export const loadUser = () => (dispatch, getState) => {
   });
 
   axios
-    .get('http://localhost:8000/api/auth/user', tokenConfig(getState))
+    .get('/api/auth/user', tokenConfig(getState))
     .then(res => {
       dispatch({
         type: types.USER_LOADED,
@@ -18,7 +18,7 @@ export const loadUser = () => (dispatch, getState) => {
       });
     })
     .catch(err => {
-      console.log(err.response.data);
+      console.log(err.response);
       dispatch({
         type: types.AUTH_ERROR
       });
@@ -41,7 +41,7 @@ export const login = (username, password) => dispatch => {
   });
 
   axios
-    .post('http://localhost:8000/api/auth/login', body, config)
+    .post('/api/auth/login', body, config)
     .then(res => {
       dispatch({
         type: types.LOGIN_SUCCESS,
@@ -49,7 +49,7 @@ export const login = (username, password) => dispatch => {
       });
     })
     .catch(err => {
-      console.log(err.response.data.data);
+      console.log(err.response);
       dispatch({
         type: types.LOGIN_FAIL
       });
@@ -73,7 +73,7 @@ export const register = ({ username, password, email }) => dispatch => {
   });
 
   axios
-    .post('http://localhost:8000/api/auth/register', body, config)
+    .post('/api/auth/register', body, config)
     .then(res => {
       dispatch({
         type: types.REGISTER_SUCCESS,
@@ -81,7 +81,7 @@ export const register = ({ username, password, email }) => dispatch => {
       });
     })
     .catch(err => {
-      console.log(err.response.data);
+      console.log(err.response);
       dispatch({
         type: types.REGISTER_FAIL
       });
@@ -91,11 +91,11 @@ export const register = ({ username, password, email }) => dispatch => {
 // LOGOUT USER
 export const logout = () => (dispatch, getState) => {
   axios
-    .post('http://localhost:8000/api/auth/logout', null, tokenConfig(getState))
+    .post('/api/auth/logout', null, tokenConfig(getState))
     .then(() => {
       dispatch({
         type: types.LOGOUT_SUCCESS
       });
     })
-    .catch(err => console.log(err.response.data));
+    .catch(err => console.log(err.response));
 };

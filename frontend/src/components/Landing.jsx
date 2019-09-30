@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../redux/ducks/auth/actions';
-import Header from './layout/Header.jsx';
+import Layout from './layout/Layout';
 
 class Landing extends Component {
   static propTypes = {
@@ -13,7 +13,7 @@ class Landing extends Component {
   render() {
     return (
       <div id="Landing">
-        <Header />
+        <Layout />
         <h1 onClick={this.props.logout}>Landing Page</h1>
       </div>
     );

@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../redux/ducks/auth/actions';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
   state = {
@@ -30,6 +31,7 @@ class Login extends Component {
     return (
       <div>
         <h1 onClick={this.onSubmit}>Login</h1>
+        <Link to="/">Home</Link>
       </div>
     );
   }

@@ -9,7 +9,7 @@ import './assets/scss/global.scss';
 import Landing from './components/Landing';
 import Register from './components/accounts/Register';
 import Login from './components/accounts/Login';
-import PrivateRoute from './components/common/PrivateRoute';
+// import PrivateRoute from './components/common/PrivateRoute';
 import NotFound from './components/common/NotFound';
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Switch>
-            <PrivateRoute exact path="/" component={Landing} />
+            <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="*" component={NotFound} />
