@@ -1,8 +1,3 @@
-@import './Nav';
-@import './TypeWriter';
-@import './Button';
-@import './Presentation';
-
 #GuestLanding {
   @include maxWidthHeight();
   font-family: 'Roboto', sans-serif;
