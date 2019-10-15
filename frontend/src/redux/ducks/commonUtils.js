@@ -11,7 +11,7 @@ const tokenConfig = getState => {
 
   // If token, add to headers config
   if (token) {
-    config.headers['Authorization'] = `Token ${token}`;
+    config.headers['x-access-token'] = `${token}`;
   }
 
   return config;

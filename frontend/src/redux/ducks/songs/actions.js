@@ -1,31 +1,30 @@
 import * as types from './types';
 import axios from 'axios';
-import { tokenConfig } from '../commonUtils';
 
-// Get Songs
-const getSongs = () => (dispatch, getState) => {
+// Get many urls by searchString
+const getUrls = searchString => dispatch => {
   axios
-    .get('/api/songs/', tokenConfig(getState))
+    .get(`/api/songs/urls?search_string=${searchString}`)
     .then(res => {
       dispatch({
-        type: types.GET_SONGS,
+        type: types.GET_URLS,
         payload: res.data
       });
     })
     .catch(err => console.log(err.response.data));
 };
 
-// Delete Song
-const deleteSong = id => (dispatch, getState) => {
+// Get Tabs by url
+const getTabs = url => dispatch => {
   axios
-    .delete(`/api/songs/${id}/`, tokenConfig(getState))
-    .then(() => {
+    .get(`/api/songs/tabs?url=${url}`)
+    .then(res => {
       dispatch({
-        type: types.DELETE_SONG,
-        payload: id
+        type: types.GET_TABS,
+        payload: res.data
       });
     })
     .catch(err => console.log(err.response.data));
 };
 
-export { getSongs, deleteSong };
+export { getUrls, getTabs };

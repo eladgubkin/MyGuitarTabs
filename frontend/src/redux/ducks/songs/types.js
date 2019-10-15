@@ -1,4 +1,4 @@
-const GET_SONGS = 'songs/GET_SONGS';
-const DELETE_SONG = 'songs/DELETE_SONG';
+const GET_URLS = 'songs/GET_URLS';
+const GET_TABS = 'songs/GET_TABS';
 
-export { GET_SONGS, DELETE_SONG };
+export { GET_URLS, GET_TABS };

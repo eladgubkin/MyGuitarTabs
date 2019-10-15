@@ -1,21 +1,22 @@
 import * as types from './types';
 
 const initialState = {
-  songs: []
+  urls: [],
+  tabs: {}
 };
 
 const songs = (state = initialState, action) => {
   switch (action.type) {
-    case types.GET_SONGS:
+    case types.GET_URLS:
       return {
         ...state,
-        songs: action.payload
+        urls: action.payload
       };
 
-    case types.DELETE_SONG:
+    case types.GET_TABS:
       return {
         ...state,
-        songs: state.songs.filter(song => song.id !== action.payload)
+        tabs: action.payload
       };
 
     default:
