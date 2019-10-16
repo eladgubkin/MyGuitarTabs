@@ -6,8 +6,8 @@ import { loadUser } from '../redux/ducks/auth/actions';
 import '../assets/scss/main.scss';
 
 // Componenets
-import Register from '../components/auth/Register';
-import Login from '../components/auth/Login';
+import Register from '../components/authentication/Register';
+import Login from '../components/authentication/Login';
 import Landing from '../components/Landing';
 import NotFoundPage from '../components/common/NotFoundPage';
 import useComponentDidMount from '../hooks/useComponentDidMount';
