@@ -57,6 +57,22 @@ const data = {
     {
       desc: 'Metal',
       icon: svgLabelFilled
+    },
+    {
+      desc: 'Folk',
+      icon: svgLabelFilled
+    },
+    {
+      desc: 'Blues',
+      icon: svgLabelFilled
+    },
+    {
+      desc: 'Pop',
+      icon: svgLabelFilled
+    },
+    {
+      desc: 'Classical',
+      icon: svgLabelFilled
     }
   ],
   themes: [
