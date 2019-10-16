@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  InputBase
-} from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import PropTypes from 'prop-types';
-import useStyles from '../../hooks/useStyles';
+import useStyles from '../../../hooks/useStyles';
+import accountCircleSvg from '../../../assets/svg/account-circle.svg';
+import viewAgendaSvg from '../../../assets/svg/view-agenda.svg';
+import magnifySvg from '../../../assets/svg/magnify.svg';
 import { connect } from 'react-redux';
-import { logout } from '../../redux/ducks/auth/actions';
+import { logout } from '../../../redux/ducks/auth/actions';
 
 const Header = props => {
   const { toggleDrawer } = props;
@@ -40,7 +35,7 @@ const Header = props => {
           <Typography className={classes.title} variant="h6" noWrap>
             myguitartabs
           </Typography>
-          <div className={classes.search}>
+          {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -54,16 +49,23 @@ const Header = props => {
               onChange={onChange}
               value={searchValue}
             />
-          </div>
+          </div> */}
           <div className={classes.grow} />
           <div>
+            <IconButton aria-label="show more" aria-haspopup="true" color="inherit">
+              <img src={magnifySvg} alt="magnifySvg" />
+            </IconButton>
+            <IconButton aria-label="show more" aria-haspopup="true" color="inherit">
+              <img src={viewAgendaSvg} alt="viewAgendaSvg" />
+            </IconButton>
             <IconButton
               aria-label="show more"
               aria-haspopup="true"
               color="inherit"
               onClick={props.logout}
             >
-              <MoreIcon />
+              {/* <MoreIcon /> */}
+              <img src={accountCircleSvg} alt="accountCircleSvg" />
             </IconButton>
           </div>
         </Toolbar>

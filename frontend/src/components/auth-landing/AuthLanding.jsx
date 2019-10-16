@@ -1,18 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Tabs from '../layout/Tabs';
 import Layout from '../layout/Layout';
-const Landing = () => {
+
+const AuthLanding = () => {
   return (
-    <div id="Landing">
+    <>
       <Layout />
-      <Tabs />
-    </div>
+    </>
   );
 };
 
-Landing.propTypes = {
+AuthLanding.propTypes = {
   auth: PropTypes.object.isRequired
 };
 
@@ -23,4 +22,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   null
-)(Landing);
+)(AuthLanding);

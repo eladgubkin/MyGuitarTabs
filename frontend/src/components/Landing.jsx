@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import GuestLanding from './GuestLanding';
-import Landing from './Landing';
+import GuestLanding from './guest-landing/GuestLanding';
+import AuthLanding from './auth-landing/AuthLanding';
 
 const Test = props => {
   if (props.auth.isAuthenticated) {
-    return <Landing />;
+    return <AuthLanding />;
   } else {
     return <GuestLanding />;
   }
