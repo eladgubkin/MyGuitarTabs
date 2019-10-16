@@ -9,6 +9,28 @@ import { Card, Button, Collapse } from '@material-ui/core';
 import { Spring } from 'react-spring/renderprops';
 
 const data = {
+  instruments: [
+    {
+      desc: 'Acoustic',
+      icon: svgChords
+    },
+    {
+      desc: 'Electric',
+      icon: svgChords
+    },
+    {
+      desc: 'Bass',
+      icon: svgChords
+    },
+    {
+      desc: 'Ukulele',
+      icon: svgChords
+    },
+    {
+      desc: 'Twelve-string',
+      icon: svgChords
+    }
+  ],
   types: [
     {
       desc: 'Tabs',
@@ -21,22 +43,6 @@ const data = {
     {
       desc: 'Sheets',
       icon: svgSheets
-    },
-    {
-      desc: 'Lol1',
-      icon: svgChords
-    },
-    {
-      desc: 'Lol2',
-      icon: svgChords
-    },
-    {
-      desc: 'Lol3',
-      icon: svgChords
-    },
-    {
-      desc: 'Lol4',
-      icon: svgChords
     }
   ],
   labels: [
@@ -46,18 +52,6 @@ const data = {
     },
     {
       desc: 'Jazz',
-      icon: svgLabelFilled
-    },
-    {
-      desc: 'Metal',
-      icon: svgLabelFilled
-    },
-    {
-      desc: 'Metal',
-      icon: svgLabelFilled
-    },
-    {
-      desc: 'Metal',
       icon: svgLabelFilled
     },
     {
@@ -85,7 +79,8 @@ const Search = () => {
   const [settings, setSettings] = useState([
     { index: 0, open: false },
     { index: 1, open: false },
-    { index: 2, open: false }
+    { index: 2, open: false },
+    { index: 3, open: false }
   ]);
 
   const handleButtonClick = (e, index) => {
