@@ -1,0 +1,5 @@
+#AuthLanding {
+  @include maxWidthHeight();
+  display: flex;
+  flex-direction: column;
+}
