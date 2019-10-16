@@ -79,6 +79,13 @@
     margin-top: 4px;
   }
 
+  .instruments {
+    .boxlist .box,
+    .MuiCollapse-wrapperInner .box-collapse {
+      background: goldenrod;
+    }
+  }
+
   .types {
     .boxlist .box,
     .MuiCollapse-wrapperInner .box-collapse {
