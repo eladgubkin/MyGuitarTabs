@@ -1,13 +1,13 @@
-from app import app, db
-from models import User
+from backend.app import app, db
+from backend.models import User
 from flask import request, jsonify, make_response
 import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 import datetime
-from decorators import token_required
+from backend.decorators import token_required
 from sqlalchemy.exc import IntegrityError
-from scraper import get_urls, get_tabs
+from backend.scraper import get_urls, get_tabs
 
 
 # Get all users
