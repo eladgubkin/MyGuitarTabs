@@ -1,36 +1,34 @@
+// Tools
 @import './functions';
 @import './variables';
+
+// GuestLanding
 @import './GuestLanding';
 @import './Nav';
 @import './TypeWriter';
 @import './Button';
 @import './Presentation';
 
+// Layout
+@import './Header';
+@import './Sidebar';
+
+// AuthLanding
+@import './AuthLanding';
+@import './Search';
+
+// Base Style
 html,
 body {
-  padding: 0;
-  margin: 0;
   @include maxWidthHeight();
-  font-size: inherit;
+  @include noMarginPadding();
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 
   #root {
     @include maxWidthHeight();
     display: flex;
     flex-direction: column;
-  }
-
-  #Landing {
-    @include maxWidthHeight();
-    display: flex;
-    flex-direction: column;
-  }
-
-  #Header {
-    background: $bgColor;
-  }
-
-  #Tabs {
-    background: $bgColor;
   }
 }
 
