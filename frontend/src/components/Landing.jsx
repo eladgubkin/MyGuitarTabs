@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import GuestLanding from './guest-landing/GuestLanding';
 import AuthLanding from './auth-landing/AuthLanding';
 
-const Test = props => {
+const Landing = props => {
   if (props.auth.isAuthenticated) {
     return <AuthLanding />;
   } else {
@@ -12,7 +12,7 @@ const Test = props => {
   }
 };
 
-Test.propTypes = {
+Landing.propTypes = {
   auth: PropTypes.object.isRequired
 };
 
@@ -23,4 +23,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   null
-)(Test);
+)(Landing);
