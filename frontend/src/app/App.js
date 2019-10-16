@@ -9,7 +9,7 @@ import '../assets/scss/main.scss';
 import Register from '../components/auth/Register';
 import Login from '../components/auth/Login';
 import Landing from '../components/Landing';
-import NotFound from '../components/common/NotFound';
+import NotFoundPage from '../components/common/NotFoundPage';
 import useComponentDidMount from '../hooks/useComponentDidMount';
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register/" component={Register} />
             <Route exact path="/login/" component={Login} />
-            <Route exact path="*" component={NotFound} />
+            <Route exact path="*" component={NotFoundPage} />
           </Switch>
         </Router>
       </Provider>
