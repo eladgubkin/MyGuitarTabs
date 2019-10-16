@@ -7,7 +7,7 @@ import {
   ListItemText,
   ListSubheader
 } from '@material-ui/core';
-import svgLabel from '../../../assets/svg/label.svg';
+import svgLabelOutline from '../../../assets/svg/label-outline.svg';
 import svgSettings from '../../../assets/svg/settings.svg';
 import svgHelp from '../../../assets/svg/help.svg';
 import PropTypes from 'prop-types';
@@ -20,13 +20,13 @@ const SidebarContent = props => {
       <List>
         <ListItem button>
           <ListItemIcon>
-            <img src={svgLabel} alt="svgLabel" />
+            <img src={svgLabelOutline} alt="svgLabelOutline" />
           </ListItemIcon>
           <ListItemText primary={'Tabs'} />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <img src={svgLabel} alt="svgLabel" />
+            <img src={svgLabelOutline} alt="svgLabelOutline" />
           </ListItemIcon>
           <ListItemText primary={'Chords'} />
         </ListItem>
@@ -41,13 +41,13 @@ const SidebarContent = props => {
       >
         <ListItem button>
           <ListItemIcon>
-            <img src={svgLabel} alt="svgLabel" />
+            <img src={svgLabelOutline} alt="svgLabelOutline" />
           </ListItemIcon>
           <ListItemText primary={'Bass'} />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <img src={svgLabel} alt="svgLabel" />
+            <img src={svgLabelOutline} alt="svgLabelOutline" />
           </ListItemIcon>
           <ListItemText primary={'Chords'} />
         </ListItem>
