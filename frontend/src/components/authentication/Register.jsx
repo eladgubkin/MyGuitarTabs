@@ -148,6 +148,7 @@ Register.propTypes = {
   validateRegister: PropTypes.func.isRequired,
   clearErrors: PropTypes.func.isRequired
 };
+
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
   errors: state.errors
