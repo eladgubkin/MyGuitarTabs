@@ -120,7 +120,7 @@ const Search = () => {
         return (
           <Card
             key={index}
-            className={`animated bounceInUp fast section ${title}`}
+            className={`animated zoomInUp faster section ${title}`}
             tabIndex={1}
           >
             <div className="title">
