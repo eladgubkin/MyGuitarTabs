@@ -7,6 +7,7 @@ import {
   ListItemText,
   ListSubheader
 } from '@material-ui/core';
+import svgGuitarAccoustic from '../../../assets/svg/guitar-acoustic.svg';
 import svgLabelOutline from '../../../assets/svg/label-outline.svg';
 import svgSettings from '../../../assets/svg/settings.svg';
 import svgHelp from '../../../assets/svg/help.svg';
@@ -16,19 +17,28 @@ const SidebarContent = props => {
   const { classes } = props;
 
   return (
-    <div className={classes.list} role="presentation">
+    <div id="SidebarContent" className={classes.list} role="presentation">
       <List>
+        <div className="logo">
+          <h3>myguitartabs</h3>
+        </div>
         <ListItem button>
           <ListItemIcon>
-            <img src={svgLabelOutline} alt="svgLabelOutline" />
+            <img src={svgGuitarAccoustic} alt="svgGuitarAccoustic" />
           </ListItemIcon>
           <ListItemText primary={'Tabs'} />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <img src={svgLabelOutline} alt="svgLabelOutline" />
+            <img src={svgGuitarAccoustic} alt="svgGuitarAccoustic" />
           </ListItemIcon>
           <ListItemText primary={'Chords'} />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <img src={svgGuitarAccoustic} alt="svgGuitarAccoustic" />
+          </ListItemIcon>
+          <ListItemText primary={'Sheets'} />
         </ListItem>
       </List>
       <Divider />
@@ -43,13 +53,43 @@ const SidebarContent = props => {
           <ListItemIcon>
             <img src={svgLabelOutline} alt="svgLabelOutline" />
           </ListItemIcon>
-          <ListItemText primary={'Bass'} />
+          <ListItemText primary={'Rock'} />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <img src={svgLabelOutline} alt="svgLabelOutline" />
           </ListItemIcon>
-          <ListItemText primary={'Chords'} />
+          <ListItemText primary={'Jazz'} />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <img src={svgLabelOutline} alt="svgLabelOutline" />
+          </ListItemIcon>
+          <ListItemText primary={'Metal'} />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <img src={svgLabelOutline} alt="svgLabelOutline" />
+          </ListItemIcon>
+          <ListItemText primary={'Folk'} />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <img src={svgLabelOutline} alt="svgLabelOutline" />
+          </ListItemIcon>
+          <ListItemText primary={'Blues'} />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <img src={svgLabelOutline} alt="svgLabelOutline" />
+          </ListItemIcon>
+          <ListItemText primary={'Pop'} />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <img src={svgLabelOutline} alt="svgLabelOutline" />
+          </ListItemIcon>
+          <ListItemText primary={'Classical'} />
         </ListItem>
       </List>
       <Divider />
