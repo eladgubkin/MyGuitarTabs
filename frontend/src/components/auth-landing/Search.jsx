@@ -6,7 +6,6 @@ import svgLabelFilled from '../../assets/svg/label-filled.svg';
 import svgHelp from '../../assets/svg/help.svg';
 
 import { Card, Button, Collapse } from '@material-ui/core';
-import { Spring } from 'react-spring/renderprops';
 
 const data = {
   instruments: [
