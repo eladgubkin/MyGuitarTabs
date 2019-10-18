@@ -48,6 +48,7 @@ const login = ({ email, password }) => dispatch => {
         type: types.LOGIN_SUCCESS,
         payload: res.data
       });
+      dispatch(loadUser());
     })
     .catch(err => {
       dispatch({
@@ -83,6 +84,7 @@ const register = ({ email, name, password }) => dispatch => {
         type: types.REGISTER_SUCCESS,
         payload: res.data
       });
+      dispatch(loadUser());
     })
     .catch(err => {
       dispatch({
