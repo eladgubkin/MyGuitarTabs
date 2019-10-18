@@ -8,6 +8,7 @@ const components = (state = initialState, action) => {
   switch (action.type) {
     case types.TOGGLE_SEARCH_COMPONENT:
       return {
+        ...state,
         showSearchComponent: !state.showSearchComponent
       };
 
