@@ -4,12 +4,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import accountCircleSvg from '../../../assets/svg/account-circle.svg';
 import viewAgendaSvg from '../../../assets/svg/view-agenda.svg';
 import magnifySvg from '../../../assets/svg/magnify.svg';
 import { connect } from 'react-redux';
 import { logout } from '../../../redux/ducks/auth/actions';
 import { toggleSearchComponent } from '../../../redux/ducks/components/actions';
+import Menu from './Menu';
 
 const drawerWidth = 240;
 
@@ -33,7 +33,6 @@ const useStyles = makeStyles(theme => ({
 const Header = props => {
   const { toggleDrawer, left } = props;
   // const [searchValue, setSearchValue] = useState('');
-
   const classes = useStyles();
 
   // const onChange = e => {
@@ -66,10 +65,6 @@ const Header = props => {
           </IconButton>
         )}
 
-        {/* <IconButton color="inherit" className="logo-img">
-          <img src={svgGuitarAccoustic} alt="svgGuitarAccoustic" />
-        </IconButton> */}
-
         <Typography className="logo" variant="h6" noWrap>
           myguitartabs
         </Typography>
@@ -83,9 +78,7 @@ const Header = props => {
             <img src={viewAgendaSvg} alt="viewAgendaSvg" />
           </IconButton>
 
-          <IconButton color="inherit" onClick={props.logout}>
-            <img src={accountCircleSvg} alt="accountCircleSvg" />
-          </IconButton>
+          <Menu />
         </div>
       </Toolbar>
     </AppBar>
