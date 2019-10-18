@@ -33,7 +33,7 @@ const AuthLanding = props => {
   const classes = useStyles();
 
   console.log('innerWidth: ' + window.innerWidth);
-  console.log('outerWidth: ' + window.outerWidth);
+
   const [state, setState] = React.useState({
     left: window.innerWidth > 1024 ? true : false
   });
