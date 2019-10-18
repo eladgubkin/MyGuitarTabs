@@ -2,6 +2,9 @@
 @import './functions';
 @import './variables';
 
+// Loading
+@import './Loading';
+
 // GuestLanding
 @import './GuestLanding';
 @import './Nav';
@@ -11,6 +14,7 @@
 
 // Layout
 @import './Header';
+@import './Menu';
 @import './Sidebar';
 
 // AuthLanding
