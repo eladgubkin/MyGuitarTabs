@@ -67,7 +67,7 @@ const Login = props => {
     });
   };
 
-  if (props.isAuthenticated) return <Redirect to="/" />;
+  if (props.isAuthenticated) return <Redirect to="/home/" />;
 
   return (
     <form
