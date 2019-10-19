@@ -13,6 +13,12 @@
     color: #5f6368;
   }
 
+  @media (max-width: 350px) {
+    .btn {
+      padding: 5px;
+    }
+  }
+
   .logo {
     display: 'block';
     cursor: pointer;
