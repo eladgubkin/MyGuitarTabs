@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Layout from '../layout/Layout';
+// import PrivateRoute from '../common/PrivateRoute'
 import Search from './Search';
 import Home from './Home';
 
@@ -65,6 +66,7 @@ const AuthLanding = props => {
     >
       <Layout toggleDrawer={toggleDrawer} left={state.left} />
       {showSearchComponent ? <Search /> : <Home />}
+      {/* <PrivateRoute exact path="/search/" component={Search} /> */}
     </div>
   );
 };
