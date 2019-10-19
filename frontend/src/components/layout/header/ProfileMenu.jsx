@@ -9,10 +9,11 @@ import {
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import accountCircleSvg from '../../../assets/svg/account-circle.svg';
+import svgAccountCircle from '../../../assets/svg/account-circle.svg';
 import { logout } from '../../../redux/ducks/auth/actions';
+import moment from 'moment';
 
-const Menu = props => {
+const ProfileMenu = props => {
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
 
@@ -49,8 +50,9 @@ const Menu = props => {
           aria-controls="menu-list-grow"
           aria-haspopup="true"
           onClick={handleToggle}
+          className="btn"
         >
-          <img src={accountCircleSvg} alt="accountCircleSvg" />
+          <img src={svgAccountCircle} alt="svgAccountCircle" />
         </IconButton>
 
         <Popper
@@ -59,7 +61,6 @@ const Menu = props => {
           anchorEl={anchorRef.current}
           transition
           disablePortal
-          keepMounted
         >
           {({ TransitionProps, placement }) => (
             <Grow
@@ -72,12 +73,25 @@ const Menu = props => {
               <Paper id="menu-list-grow">
                 <ClickAwayListener onClickAway={handleClose}>
                   <div className="maxWidthHeight">
-                    <Button className="btn" onClick={props.logout}>
-                      Logout
-                    </Button>
-                    <h3>{props.user.email}</h3>
-                    <h3>{props.user.name}</h3>
-                    <h4>{props.user.created_at}</h4>
+                    <div className="avatar">
+                      <img src={svgAccountCircle} alt="svgAccountCircle" />
+                    </div>
+
+                    <div className="info">
+                      <span className="name">{props.user.name}</span>
+                      <span className="email">alongubkin.gubkin@gmail.com</span>
+                    </div>
+
+                    <div className="date">
+                      <span>
+                        {moment(props.user.created_at).format('MMM D, YYYY')}
+                      </span>
+                    </div>
+                    <div className="logout">
+                      <Button color="inherit" onClick={props.logout}>
+                        Logout
+                      </Button>
+                    </div>
                   </div>
                 </ClickAwayListener>
               </Paper>
@@ -89,7 +103,7 @@ const Menu = props => {
   }
 };
 
-Menu.propTypes = {
+ProfileMenu.propTypes = {
   user: PropTypes.object
 };
 
@@ -100,4 +114,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { logout }
-)(Menu);
+)(ProfileMenu);
