@@ -4,12 +4,13 @@ import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import viewAgendaSvg from '../../../assets/svg/view-agenda.svg';
-import magnifySvg from '../../../assets/svg/magnify.svg';
+import svgViewAgenda from '../../../assets/svg/view-agenda.svg';
+import svgMagnifyG from '../../../assets/svg/magnify.svg';
+import svgSettings from '../../../assets/svg/settings.svg';
 import { connect } from 'react-redux';
 import { logout } from '../../../redux/ducks/auth/actions';
 import { toggleSearchComponent } from '../../../redux/ducks/components/actions';
-import Menu from './Menu';
+import ProfileMenu from './ProfileMenu';
 
 const drawerWidth = 240;
 
@@ -70,15 +71,19 @@ const Header = props => {
         </Typography>
         <div className="grow" />
         <div>
-          <IconButton color="inherit" onClick={props.toggleSearchComponent}>
-            <img src={magnifySvg} alt="magnifySvg" />
+          <IconButton
+            color="inherit"
+            onClick={props.toggleSearchComponent}
+            className="btn"
+          >
+            <img src={svgMagnifyG} alt="svgMagnifyG" />
           </IconButton>
 
-          <IconButton aria-label="show more" aria-haspopup="true" color="inherit">
-            <img src={viewAgendaSvg} alt="viewAgendaSvg" />
+          <IconButton color="inherit" className="btn">
+            <img src={svgViewAgenda} alt="svgViewAgenda" />
           </IconButton>
 
-          <Menu />
+          <ProfileMenu />
         </div>
       </Toolbar>
     </AppBar>
