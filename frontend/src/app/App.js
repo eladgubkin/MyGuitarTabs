@@ -8,11 +8,12 @@ import { connect } from 'react-redux';
 // Componenets
 import Loading from '../components/common/Loading';
 import PrivateRoute from '../components/common/PrivateRoute';
+// import Landing from '../components/Landing';
 import Register from '../components/authentication/Register';
 import Login from '../components/authentication/Login';
 import AuthLanding from '../components/auth-landing/AuthLanding';
 import GuestLanding from '../components/guest-landing/GuestLanding';
-import Search from '../components/auth-landing/Search';
+// import Search from '../components/auth-landing/Search';
 import NotFoundPage from '../components/common/NotFoundPage';
 import useComponentDidMount from '../hooks/useComponentDidMount';
 
@@ -28,7 +29,6 @@ const App = props => {
       <Router>
         <Switch>
           <PrivateRoute exact path="/home/" component={AuthLanding} />
-          <PrivateRoute exact path="/search/" component={Search} />
           <Route exact path="/" component={GuestLanding} />
           <Route exact path="/register/" component={Register} />
           <Route exact path="/login/" component={Login} />
