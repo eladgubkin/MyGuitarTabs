@@ -11,16 +11,12 @@ const songs = [
   'Blackbird',
   'Nothing else matters',
   'Sultan of swing',
-  'Layla',
   'Comfortably numb',
-  'Hey Jude',
-  'Let it be',
   'Michael Jackson',
   'Smells like teen spirit',
   'Jimi Hendrix',
   'The Beatles',
-  'Metallica',
-  'Bob Marley'
+  'Metallica'
 ];
 
 let index = 0;
