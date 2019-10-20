@@ -39,12 +39,8 @@ const AuthLanding = props => {
     left: window.innerWidth > 1024 ? true : false
   });
 
-  const toggleDrawer = (side, open) => event => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
+  const toggleDrawer = (side, open) => e => {
+    if (e && e.type === 'keydown' && (e.key === 'Tab' || e.key === 'Shift')) {
       return;
     }
 
