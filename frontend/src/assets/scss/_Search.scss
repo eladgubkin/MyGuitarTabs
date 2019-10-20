@@ -1,6 +1,7 @@
 #Search {
   @include maxWidthHeight();
-  max-width: 640px;
+  // max-width: 640px;
+  max-width: 492px;
   margin: 0 auto;
 
   .section {
@@ -49,8 +50,10 @@
       @include centerFlex();
       width: 24vw;
       height: 24vw;
-      max-width: 157px;
-      max-height: 157px;
+      // max-width: 157px;
+      // max-height: 157px;
+      max-width: 120px;
+      max-height: 120px;
       position: relative;
       cursor: pointer;
 
