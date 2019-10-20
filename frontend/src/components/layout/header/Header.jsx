@@ -1,16 +1,23 @@
-import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
+import React, { useState } from 'react';
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  InputBase
+} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import svgViewAgenda from '../../../assets/svg/view-agenda.svg';
 import svgMagnifyG from '../../../assets/svg/magnify.svg';
-import svgSettings from '../../../assets/svg/settings.svg';
+import svgClose from '../../../assets/svg/close.svg';
 import { connect } from 'react-redux';
 import { logout } from '../../../redux/ducks/auth/actions';
 import { toggleSearchComponent } from '../../../redux/ducks/components/actions';
 import ProfileMenu from './ProfileMenu';
+import _ from 'lodash';
 
 const drawerWidth = 240;
 
@@ -32,14 +39,21 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Header = props => {
-  const { toggleDrawer, left } = props;
-  // const [searchValue, setSearchValue] = useState('');
+  const { toggleDrawer, left, showSearchComponent } = props;
+  const [searchString, setSearchString] = useState('');
   const classes = useStyles();
 
-  // const onChange = e => {
-  //   setSearchValue(e.target.value);
-  //   console.log('Search!');
-  // };
+  const onChange = e => {
+    setSearchString(e.target.value);
+  };
+
+  const onSubmit = e => {
+    e.preventDefault();
+    if (!_.isEmpty(searchString)) {
+      // props.search(searchString);
+      console.log(searchString);
+    }
+  };
 
   return (
     <AppBar
@@ -65,26 +79,55 @@ const Header = props => {
             <MenuIcon />
           </IconButton>
         )}
-
-        <Typography className="logo" variant="h6" noWrap>
-          myguitartabs
-        </Typography>
-        <div className="grow" />
-        <div>
-          <IconButton
-            color="inherit"
-            onClick={props.toggleSearchComponent}
-            className="btn"
-          >
-            <img src={svgMagnifyG} alt="svgMagnifyG" />
-          </IconButton>
-
+        {showSearchComponent ? (
+          // Show search bar
+          <>
+            <div className="animated fadeIn faster searchbox">
+              <form onSubmit={onSubmit} noValidate autoComplete="off">
+                <IconButton className="btn-search" onClick={onSubmit} type="submit">
+                  <img src={svgMagnifyG} alt="svgMagnifyG" />
+                </IconButton>
+                <InputBase
+                  type="text"
+                  placeholder="Search"
+                  className="search-input"
+                  value={searchString}
+                  variant="standard"
+                  onChange={onChange}
+                />
+                <IconButton
+                  className="btn-close"
+                  onClick={props.toggleSearchComponent}
+                  type="button"
+                >
+                  <img src={svgClose} alt="svgClose" />
+                </IconButton>
+              </form>
+            </div>
+            <div className="grow" />
+          </>
+        ) : (
+          // No search bar
+          <>
+            <Typography className="logo" variant="h6" noWrap>
+              myguitartabs
+            </Typography>
+            <div className="grow" />
+            <IconButton
+              color="inherit"
+              onClick={props.toggleSearchComponent}
+              className="btn"
+            >
+              <img src={svgMagnifyG} alt="svgMagnifyG" />
+            </IconButton>
+          </>
+        )}
+        <>
           <IconButton color="inherit" className="btn">
             <img src={svgViewAgenda} alt="svgViewAgenda" />
           </IconButton>
-
           <ProfileMenu />
-        </div>
+        </>
       </Toolbar>
     </AppBar>
   );
@@ -95,11 +138,13 @@ Header.propTypes = {
   left: PropTypes.bool.isRequired,
   auth: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired,
-  toggleSearchComponent: PropTypes.func.isRequired
+  toggleSearchComponent: PropTypes.func.isRequired,
+  showSearchComponent: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  showSearchComponent: state.components.showSearchComponent
 });
 
 export default connect(
