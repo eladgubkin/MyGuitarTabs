@@ -74,12 +74,12 @@ const ProfileMenu = props => {
                 <ClickAwayListener onClickAway={handleClose}>
                   <div className="maxWidthHeight">
                     <div className="avatar">
-                      <img src={svgAccountCircle} alt="svgAccountCircle" />
+                      {/* <img src={svgAccountCircle} alt="svgAccountCircle" /> */}
                     </div>
 
                     <div className="info">
                       <span className="name">{props.user.name}</span>
-                      <span className="email">alongubkin.gubkin@gmail.com</span>
+                      <span className="email">{props.user.email}</span>
                     </div>
 
                     <div className="date">
