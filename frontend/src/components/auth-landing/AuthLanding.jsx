@@ -6,7 +6,6 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from './Header';
 import Sidebar from './Sidebar';
-// import PrivateRoute from '../common/PrivateRoute'
 import Search from './Search';
 import Home from './Home';
 
