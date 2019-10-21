@@ -42,7 +42,7 @@ const login = ({ email, password }) => dispatch => {
   });
 
   axios
-    .post('/api/login', body, config)
+    .post('/api/auth/login', body, config)
     .then(res => {
       dispatch({
         type: types.LOGIN_SUCCESS,
@@ -78,7 +78,7 @@ const register = ({ email, name, password }) => dispatch => {
   });
 
   axios
-    .post('/api/register', body, config)
+    .post('/api/auth/register', body, config)
     .then(res => {
       dispatch({
         type: types.REGISTER_SUCCESS,

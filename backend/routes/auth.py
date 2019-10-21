@@ -9,7 +9,7 @@ from sqlalchemy.exc import IntegrityError
 
 
 # Register
-@app.route('/api/register', methods=['POST'])
+@app.route('/api/auth/register', methods=['POST'])
 def create_new_user():
     data = request.get_json()
 
@@ -36,7 +36,7 @@ def create_new_user():
 
 
 # Login
-@app.route('/api/login', methods=['POST'])
+@app.route('/api/auth/login', methods=['POST'])
 def login():
     data = request.get_json()
     user = User.query.filter_by(email=data['email']).first()
