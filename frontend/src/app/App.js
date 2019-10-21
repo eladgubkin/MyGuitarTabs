@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { loadUser } from '../redux/ducks/auth/actions';
+import { loadUser } from '../redux/ducks/authentication/actions';
 import '../assets/scss/main.scss';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';

@@ -1,6 +1,6 @@
 import * as types from './types';
 import { validateRegisterInput, validateLoginInput } from './utils';
-import { register, login } from '../auth/actions';
+import { register, login } from '../authentication/actions';
 
 const validateRegister = ({ email, name, password, password2 }) => dispatch => {
   const { errors, isValid } = validateRegisterInput({

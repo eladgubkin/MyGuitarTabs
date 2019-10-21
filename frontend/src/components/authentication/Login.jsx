@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { login } from '../../redux/ducks/auth/actions';
+import { login } from '../../redux/ducks/authentication/actions';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { withStyles, makeStyles } from '@material-ui/core/styles';

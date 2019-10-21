@@ -14,7 +14,7 @@ import svgViewAgenda from '../../../assets/svg/view-agenda.svg';
 import svgMagnifyG from '../../../assets/svg/magnify.svg';
 import svgClose from '../../../assets/svg/close.svg';
 import { connect } from 'react-redux';
-import { logout } from '../../../redux/ducks/auth/actions';
+import { logout } from '../../../redux/ducks/authentication/actions';
 import { toggleSearchComponent } from '../../../redux/ducks/components/actions';
 import ProfileMenu from './ProfileMenu';
 import _ from 'lodash';
