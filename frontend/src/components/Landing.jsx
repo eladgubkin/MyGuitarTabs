@@ -5,7 +5,7 @@ import GuestLanding from './guest-landing/GuestLanding';
 import AuthLanding from './auth-landing/AuthLanding';
 
 const Landing = props => {
-  if (props.auth.isAuthenticated) {
+  if (props.isAuthenticated) {
     return <AuthLanding />;
   } else {
     return <GuestLanding />;
@@ -13,11 +13,11 @@ const Landing = props => {
 };
 
 Landing.propTypes = {
-  auth: PropTypes.object.isRequired
+  isAuthenticated: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(
