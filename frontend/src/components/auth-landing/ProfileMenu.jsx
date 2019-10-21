@@ -9,8 +9,8 @@ import {
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import svgAccountCircle from '../../../assets/svg/account-circle.svg';
-import { logout } from '../../../redux/ducks/authentication/actions';
+import svgAccountCircle from '../../assets/svg/account-circle.svg';
+import { logout } from '../../redux/ducks/authentication/actions';
 import moment from 'moment';
 
 const ProfileMenu = props => {

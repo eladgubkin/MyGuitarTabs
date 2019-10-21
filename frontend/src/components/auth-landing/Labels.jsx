@@ -1,6 +1,6 @@
 import React from 'react';
-import svgLabelOutline from '../../../assets/svg/label-outline.svg';
-import svgPencilOutline from '../../../assets/svg/pencil-outline.svg';
+import svgLabelOutline from '../../assets/svg/label-outline.svg';
+import svgPencilOutline from '../../assets/svg/pencil-outline.svg';
 import {
   List,
   ListItem,

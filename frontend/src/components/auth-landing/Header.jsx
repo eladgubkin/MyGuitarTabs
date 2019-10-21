@@ -10,12 +10,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import svgViewAgenda from '../../../assets/svg/view-agenda.svg';
-import svgMagnifyG from '../../../assets/svg/magnify.svg';
-import svgClose from '../../../assets/svg/close.svg';
+import svgViewAgenda from '../../assets/svg/view-agenda.svg';
+import svgMagnifyG from '../../assets/svg/magnify.svg';
+import svgClose from '../../assets/svg/close.svg';
 import { connect } from 'react-redux';
-import { logout } from '../../../redux/ducks/authentication/actions';
-import { toggleSearchComponent } from '../../../redux/ducks/components/actions';
+import { logout } from '../../redux/ducks/authentication/actions';
+import { toggleSearchComponent } from '../../redux/ducks/components/actions';
 import ProfileMenu from './ProfileMenu';
 import _ from 'lodash';
 

@@ -6,9 +6,9 @@ import {
   ListItemIcon,
   ListItemText
 } from '@material-ui/core';
-import svgGuitarAccoustic from '../../../assets/svg/guitar-acoustic.svg';
-import svgSettings from '../../../assets/svg/settings.svg';
-import svgHelp from '../../../assets/svg/help.svg';
+import svgGuitarAccoustic from '../../assets/svg/guitar-acoustic.svg';
+import svgSettings from '../../assets/svg/settings.svg';
+import svgHelp from '../../assets/svg/help.svg';
 import PropTypes from 'prop-types';
 import Labels from './Labels';
 
