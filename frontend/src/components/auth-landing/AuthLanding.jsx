@@ -4,7 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Layout from '../layout/Layout';
+import Header from './Header';
+import Sidebar from './Sidebar';
 // import PrivateRoute from '../common/PrivateRoute'
 import Search from './Search';
 import Home from './Home';
@@ -60,7 +61,8 @@ const AuthLanding = props => {
           : null
       }
     >
-      <Layout toggleDrawer={toggleDrawer} left={state.left} />
+      <Header toggleDrawer={toggleDrawer} left={state.left} />
+      <Sidebar toggleDrawer={toggleDrawer} left={state.left} />
       {showSearchComponent ? <Search /> : <Home />}
       {/* <PrivateRoute exact path="/search/" component={Search} /> */}
     </div>
