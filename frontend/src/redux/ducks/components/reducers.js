@@ -1,7 +1,8 @@
 import * as types from './types';
 
 const initialState = {
-  showSearchComponent: false
+  showSearchComponent: false,
+  showResultComponent: false
 };
 
 const components = (state = initialState, action) => {
@@ -10,6 +11,13 @@ const components = (state = initialState, action) => {
       return {
         ...state,
         showSearchComponent: !state.showSearchComponent
+      };
+
+    case types.TOGGLE_RESULT_COMPONENT:
+      return {
+        ...state,
+        showSearchComponent: false,
+        showResultComponent: true
       };
 
     default:
