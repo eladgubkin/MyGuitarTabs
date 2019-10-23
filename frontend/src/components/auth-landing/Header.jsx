@@ -15,9 +15,13 @@ import svgMagnifyG from '../../assets/svg/magnify.svg';
 import svgClose from '../../assets/svg/close.svg';
 import { connect } from 'react-redux';
 import { logout } from '../../redux/ducks/authentication/actions';
-import { toggleSearchComponent } from '../../redux/ducks/components/actions';
+import {
+  toggleSearchComponent,
+  toggleResultComponent
+} from '../../redux/ducks/components/actions';
 import ProfileMenu from './ProfileMenu';
 import _ from 'lodash';
+import { getUrls } from '../../redux/ducks/songs/actions';
 
 const drawerWidth = 240;
 
@@ -50,8 +54,8 @@ const Header = props => {
   const onSubmit = e => {
     e.preventDefault();
     if (!_.isEmpty(searchString)) {
-      // props.search(searchString);
-      console.log(searchString);
+      // props.getUrls(searchString);
+      console.log('lol');
     }
   };
 
@@ -139,15 +143,19 @@ Header.propTypes = {
   auth: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired,
   toggleSearchComponent: PropTypes.func.isRequired,
-  showSearchComponent: PropTypes.bool.isRequired
+  showSearchComponent: PropTypes.bool.isRequired,
+  getUrls: PropTypes.func.isRequired,
+  urls: PropTypes.array.isRequired,
+  toggleResultComponent: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  showSearchComponent: state.components.showSearchComponent
+  showSearchComponent: state.components.showSearchComponent,
+  urls: state.songs.urls
 });
 
 export default connect(
   mapStateToProps,
-  { logout, toggleSearchComponent }
+  { logout, toggleSearchComponent, getUrls, toggleResultComponent }
 )(Header);
