@@ -6,8 +6,9 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import Search from './Search';
 import Home from './Home';
+import Search from './Search';
+import Result from './Result';
 
 const drawerWidth = 240;
 
@@ -30,7 +31,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const AuthLanding = props => {
-  const { showSearchComponent } = props.components;
+  const { showSearchComponent, showResultComponent } = props.components;
   const classes = useStyles();
 
   console.log('innerWidth: ' + window.innerWidth);
@@ -63,6 +64,7 @@ const AuthLanding = props => {
       <Header toggleDrawer={toggleDrawer} left={state.left} />
       <Sidebar toggleDrawer={toggleDrawer} left={state.left} />
       {showSearchComponent ? <Search /> : <Home />}
+
       {/* <PrivateRoute exact path="/search/" component={Search} /> */}
     </div>
   );
