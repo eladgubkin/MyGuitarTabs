@@ -7,4 +7,11 @@ const toggleSearchComponent = () => dispatch => {
   });
 };
 
-export { toggleSearchComponent };
+// Toggle Result component
+const toggleResultComponent = () => dispatch => {
+  dispatch({
+    type: types.TOGGLE_RESULT_COMPONENT
+  });
+};
+
+export { toggleSearchComponent, toggleResultComponent };
