@@ -1,4 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+// SVG
+import svgGuitarAccoustic from '../../assets/svg/guitar-acoustic.svg';
+import svgSettings from '../../assets/svg/settings.svg';
+import svgHelp from '../../assets/svg/help.svg';
+
+// Material UI
 import {
   List,
   Divider,
@@ -6,10 +14,8 @@ import {
   ListItemIcon,
   ListItemText
 } from '@material-ui/core';
-import svgGuitarAccoustic from '../../assets/svg/guitar-acoustic.svg';
-import svgSettings from '../../assets/svg/settings.svg';
-import svgHelp from '../../assets/svg/help.svg';
-import PropTypes from 'prop-types';
+
+// Components
 import Labels from './Labels';
 
 const SidebarContent = props => {

@@ -1,11 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+// Material UI
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { SwipeableDrawer } from '@material-ui/core';
-import SidebarContent from './SidebarContent';
-import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
+// Components
+import SidebarContent from './SidebarContent';
 
 const useStyles = makeStyles(theme => ({
   list: {

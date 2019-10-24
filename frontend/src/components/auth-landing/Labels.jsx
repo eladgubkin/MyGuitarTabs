@@ -1,6 +1,10 @@
 import React from 'react';
+
+// SVG
 import svgLabelOutline from '../../assets/svg/label-outline.svg';
 import svgPencilOutline from '../../assets/svg/pencil-outline.svg';
+
+// Material UI
 import {
   List,
   ListItem,

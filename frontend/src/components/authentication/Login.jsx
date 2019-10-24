@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { login } from '../../redux/ducks/authentication/actions';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import clsx from 'clsx';
+import useComponentDidMount from '../../hooks/useComponentDidMount';
+
+// Material UI
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Button as Btn } from '@material-ui/core';
+
+// Redux
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../redux/ducks/authentication/actions';
 import { validateLogin, clearErrors } from '../../redux/ducks/errors/actions';
-import useComponentDidMount from '../../hooks/useComponentDidMount';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -67,7 +70,7 @@ const Login = props => {
     });
   };
 
-  if (props.isAuthenticated) return <Redirect to="/" />;
+  if (props.isAuthenticated) return <Redirect to="/home/" />;
 
   return (
     <form
