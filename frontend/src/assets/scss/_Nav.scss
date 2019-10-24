@@ -1,9 +1,11 @@
 #Nav {
-  @include maxWidthHeight();
+  width: 100%;
+  max-width: 1000px;
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-areas: 'logo . login';
   align-items: center;
+  margin: 0 auto;
 
   div {
     padding: 20px 0.4rem;
