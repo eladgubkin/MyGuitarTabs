@@ -1,18 +1,30 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { loadUser } from '../redux/ducks/authentication/actions';
-import '../assets/scss/main.scss';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import useComponentDidMount from '../hooks/useComponentDidMount';
 
-// Componenets
+// Redux
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { loadUser } from '../redux/ducks/authentication/actions';
+
+// Style
+import '../assets/scss/main.scss';
+
+// Common components
 import Loading from '../components/common/Loading';
-// import PrivateRoute from '../components/common/PrivateRoute';
-import Landing from '../components/Landing';
+// import NotFoundPage from '../components/common/NotFoundPage';
+import RouteWithLayout from '../components/common/RouteWithLayout';
+
+// Guest components
+import Landing from '../components/landing/Landing';
 import Register from '../components/authentication/Register';
 import Login from '../components/authentication/Login';
-import NotFoundPage from '../components/common/NotFoundPage';
-import useComponentDidMount from '../hooks/useComponentDidMount';
+
+// Auth components
+import Layout from '../components/auth-landing/Layout';
+import Home from '../components/auth-landing/Home';
+import Search from '../components/auth-landing/Search';
+import Label from '../components/auth-landing/Label.jsx';
 
 const App = props => {
   const { isLoading } = props.auth;
@@ -25,10 +37,13 @@ const App = props => {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/register/" component={Register} />
-          <Route exact path="/login/" component={Login} />
-          <Route exact path="*" component={NotFoundPage} />
+          <RouteWithLayout layout={Layout} path="/label/" component={Label} />
+          <RouteWithLayout layout={Layout} path="/search/" component={Search} />
+          <RouteWithLayout layout={Layout} path="/home/" component={Home} />
+
+          <Route exac path="/register/" component={Register} />
+          <Route exac path="/login/" component={Login} />
+          <Route exac path="/" component={Landing} />
         </Switch>
       </Router>
     );
