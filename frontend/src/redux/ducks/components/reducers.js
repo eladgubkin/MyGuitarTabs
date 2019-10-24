@@ -16,7 +16,6 @@ const components = (state = initialState, action) => {
     case types.TOGGLE_RESULT_COMPONENT:
       return {
         ...state,
-        showSearchComponent: false,
         showResultComponent: true
       };
 
