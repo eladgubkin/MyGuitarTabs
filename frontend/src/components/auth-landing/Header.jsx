@@ -1,4 +1,16 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
+import clsx from 'clsx';
+import _ from 'lodash';
+
+// SVG
+import svgViewAgenda from '../../assets/svg/view-agenda.svg';
+import svgMagnifyG from '../../assets/svg/magnify.svg';
+import svgClose from '../../assets/svg/close.svg';
+
+// Material UI
+import { makeStyles } from '@material-ui/core/styles';
+import MenuIcon from '@material-ui/icons/Menu';
 import {
   AppBar,
   Toolbar,
@@ -6,22 +18,16 @@ import {
   Typography,
   InputBase
 } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
-import svgViewAgenda from '../../assets/svg/view-agenda.svg';
-import svgMagnifyG from '../../assets/svg/magnify.svg';
-import svgClose from '../../assets/svg/close.svg';
+
+// Redux
 import { connect } from 'react-redux';
-import { logout } from '../../redux/ducks/authentication/actions';
-import {
-  toggleSearchComponent,
-  toggleResultComponent
-} from '../../redux/ducks/components/actions';
-import ProfileMenu from './ProfileMenu';
-import _ from 'lodash';
+import PropTypes from 'prop-types';
 import { getUrls } from '../../redux/ducks/songs/actions';
+import { logout } from '../../redux/ducks/authentication/actions';
+import { toggleSearchComponent } from '../../redux/ducks/components/actions';
+
+// Components
+import ProfileMenu from './ProfileMenu';
 
 const drawerWidth = 240;
 
@@ -55,7 +61,7 @@ const Header = props => {
     e.preventDefault();
     if (!_.isEmpty(searchString)) {
       // props.getUrls(searchString);
-      console.log('lol');
+      console.log(searchString);
     }
   };
 
@@ -87,6 +93,7 @@ const Header = props => {
           // Show search bar
           <>
             <div className="animated fadeIn faster searchbox">
+              {/* <div className="searchbox"> */}
               <form onSubmit={onSubmit} noValidate autoComplete="off">
                 <IconButton className="btn-search" onClick={onSubmit} type="submit">
                   <img src={svgMagnifyG} alt="svgMagnifyG" />
@@ -99,9 +106,12 @@ const Header = props => {
                   variant="standard"
                   onChange={onChange}
                 />
+
                 <IconButton
                   className="btn-close"
-                  onClick={props.toggleSearchComponent}
+                  onClick={() => {
+                    return props.history.goBack() & props.toggleSearchComponent();
+                  }}
                   type="button"
                 >
                   <img src={svgClose} alt="svgClose" />
@@ -113,13 +123,25 @@ const Header = props => {
         ) : (
           // No search bar
           <>
-            <Typography className="logo" variant="h6" noWrap>
+            <Typography
+              className="logo"
+              variant="h6"
+              noWrap
+              onClick={() => props.history.push('/home/')}
+            >
               myguitartabs
             </Typography>
+
             <div className="grow" />
+
             <IconButton
               color="inherit"
-              onClick={props.toggleSearchComponent}
+              onClick={() => {
+                props.history.push('/search/');
+                if (props.location.pathname === '/search/') {
+                  props.toggleSearchComponent();
+                }
+              }}
               className="btn"
             >
               <img src={svgMagnifyG} alt="svgMagnifyG" />
@@ -145,8 +167,7 @@ Header.propTypes = {
   toggleSearchComponent: PropTypes.func.isRequired,
   showSearchComponent: PropTypes.bool.isRequired,
   getUrls: PropTypes.func.isRequired,
-  urls: PropTypes.array.isRequired,
-  toggleResultComponent: PropTypes.func.isRequired
+  urls: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -157,5 +178,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { logout, toggleSearchComponent, getUrls, toggleResultComponent }
-)(Header);
+  { logout, toggleSearchComponent, getUrls }
+)(withRouter(Header));
