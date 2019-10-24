@@ -1,14 +1,17 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
-import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+
+// Material UI
+import { makeStyles } from '@material-ui/core/styles';
+
+// Redux
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from './Header';
-import Sidebar from './Sidebar';
+
+// Components
 import Home from './Home';
 import Search from './Search';
-import Result from './Result';
 
 const drawerWidth = 240;
 
@@ -31,22 +34,10 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const AuthLanding = props => {
-  const { showSearchComponent, showResultComponent } = props.components;
+  const { showSearchComponent } = props.components;
   const classes = useStyles();
 
   console.log('innerWidth: ' + window.innerWidth);
-
-  const [state, setState] = React.useState({
-    left: window.innerWidth > 1024 ? true : false
-  });
-
-  const toggleDrawer = (side, open) => e => {
-    if (e && e.type === 'keydown' && (e.key === 'Tab' || e.key === 'Shift')) {
-      return;
-    }
-
-    setState({ ...state, [side]: open });
-  };
 
   if (!props.isAuthenticated) return <Redirect to="/" />;
 
@@ -56,16 +47,12 @@ const AuthLanding = props => {
       className={
         window.innerWidth > 1024
           ? clsx(classes.content, {
-              [classes.contentShift]: state.left
+              [classes.contentShift]: true
             })
           : null
       }
     >
-      <Header toggleDrawer={toggleDrawer} left={state.left} />
-      <Sidebar toggleDrawer={toggleDrawer} left={state.left} />
-      {showSearchComponent ? <Search /> : <Home />}
-
-      {/* <PrivateRoute exact path="/search/" component={Search} /> */}
+      <h3>Lol</h3>
     </div>
   );
 };
