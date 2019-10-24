@@ -1,4 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
+import moment from 'moment';
+
+// SVG
+import svgAccountCircle from '../../assets/svg/account-circle.svg';
+
+// Material UI
 import {
   ClickAwayListener,
   IconButton,
@@ -7,11 +13,11 @@ import {
   Grow,
   Button
 } from '@material-ui/core';
-import PropTypes from 'prop-types';
+
+// Redux
 import { connect } from 'react-redux';
-import svgAccountCircle from '../../assets/svg/account-circle.svg';
+import PropTypes from 'prop-types';
 import { logout } from '../../redux/ducks/authentication/actions';
-import moment from 'moment';
 
 const ProfileMenu = props => {
   const [open, setOpen] = useState(false);
@@ -40,7 +46,7 @@ const ProfileMenu = props => {
   }, [open]);
 
   if (props.user === null) {
-    return <h1 style={{ background: 'red', height: '100vh' }}>Loading....</h1>;
+    return <h1 style={{ background: 'red' }}>Loading....</h1>;
   } else {
     return (
       <>
