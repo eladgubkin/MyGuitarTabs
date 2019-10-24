@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
+// SVG
 import svgTabs from '../../assets/svg/guitar-tabs.svg';
 import svgChords from '../../assets/svg/guitar.svg';
 import svgSheets from '../../assets/svg/music-note.svg';
 import svgLabelFilled from '../../assets/svg/label-filled.svg';
 import svgHelp from '../../assets/svg/help.svg';
 
+// Material UI
 import { Card, Button, Collapse } from '@material-ui/core';
 
 const data = {
@@ -90,7 +93,7 @@ const data = {
   ]
 };
 
-const Search = () => {
+const Search = props => {
   const [settings, setSettings] = useState([
     { index: 0, open: false },
     { index: 1, open: false },
@@ -120,7 +123,7 @@ const Search = () => {
         return (
           <Card
             key={index}
-            className={`animated zoomInUp faster section ${title}`}
+            className={`animated slideInUp faster section ${title}`}
             tabIndex={1}
           >
             <div className="title">
@@ -141,7 +144,12 @@ const Search = () => {
               {/* Always show up to 4 items without collapse */}
               {data[title].slice(0, 4).map((item, i) => {
                 return (
-                  <div className="box" key={i} tabIndex={1}>
+                  <div
+                    className="box"
+                    key={i}
+                    tabIndex={1}
+                    onClick={() => props.history.push('/label/')}
+                  >
                     <img src={item.icon} alt={item.icon} />
                     <span>{item.desc}</span>
                   </div>
@@ -156,7 +164,12 @@ const Search = () => {
             >
               {data[title].slice(4).map((item, i) => {
                 return (
-                  <div className="box-collapse" key={i} tabIndex={1}>
+                  <div
+                    className="box-collapse"
+                    key={i}
+                    tabIndex={1}
+                    onClick={() => props.history.push('/label/')}
+                  >
                     <img src={item.icon} alt={item.icon} />
                     <span>{item.desc}</span>
                   </div>
@@ -170,4 +183,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default withRouter(Search);
