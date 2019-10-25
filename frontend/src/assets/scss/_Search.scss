@@ -29,6 +29,10 @@
         text-transform: capitalize;
         color: #1a73e8;
         padding: 0;
+
+        &:focus {
+          background: #ececed;
+        }
       }
 
       .grow {
@@ -90,7 +94,7 @@
   }
 
   .types {
-    animation-delay: 0.15s;
+    animation-delay: 0.05s;
 
     .boxlist .box,
     .MuiCollapse-wrapperInner .box-collapse {
@@ -99,7 +103,7 @@
   }
 
   .labels {
-    animation-delay: 0.3s;
+    animation-delay: 0.1s;
 
     .boxlist .box,
     .MuiCollapse-wrapperInner .box-collapse {
@@ -112,7 +116,7 @@
   }
 
   .themes {
-    animation-delay: 0.45s;
+    animation-delay: 0.15s;
     .boxlist .box,
     .MuiCollapse-wrapperInner .box-collapse {
       background: #f5f5f5;
