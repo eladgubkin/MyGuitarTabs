@@ -18,5 +18,3 @@ class Song(db.Model):
     last_edit_by_id = db.Column(db.Integer, nullable=True)
     content = db.Column(db.Text, nullable=True)
     strummings = db.Column(db.Text, nullable=True)
-    # contributors = db.Column(db.Text, nullable=True)
-    # recommended_tabs = db.Column(db.Text, nullable=True)
