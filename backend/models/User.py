@@ -1,4 +1,5 @@
 from backend.app import db
+from backend.models.association import association
 from datetime import datetime
 
 
@@ -8,7 +9,9 @@ class User(db.Model):
     email = db.Column(db.String(80), unique=True, nullable=False)
     name = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(80), nullable=False)
-    # favorites = db.relationship(
-    #     'Song', secondary=favorites, backref=db.backref('favorites'), lazy='dynamic')
-    created_at = db.Column(
-        db.DateTime, nullable=False, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, nullable=False,
+                           default=datetime.utcnow)
+    labels = db.relationship('Label')
+
+    association = db.relationship(
+        'Song', secondary=association, backref=db.backref('association'), lazy='dynamic')
