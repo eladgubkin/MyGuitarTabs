@@ -12,8 +12,8 @@ import '../assets/scss/main.scss';
 
 // Common components
 import Loading from '../components/common/Loading';
-// import NotFoundPage from '../components/common/NotFoundPage';
 import RouteWithLayout from '../components/common/RouteWithLayout';
+import Layout from '../components/common/Layout';
 
 // Guest components
 import Landing from '../components/landing/Landing';
@@ -21,10 +21,9 @@ import Register from '../components/authentication/Register';
 import Login from '../components/authentication/Login';
 
 // Auth components
-import Layout from '../components/auth-landing/Layout';
-import Home from '../components/auth-landing/Home';
-import Search from '../components/auth-landing/Search';
-import Label from '../components/auth-landing/Label.jsx';
+import Home from '../components/pages/Home';
+import Search from '../components/pages/Search';
+import Label from '../components/pages/Label.jsx';
 
 const App = props => {
   const { isLoading } = props.auth;
@@ -37,9 +36,9 @@ const App = props => {
     return (
       <Router>
         <Switch>
-          <RouteWithLayout layout={Layout} path="/label/" component={Label} />
-          <RouteWithLayout layout={Layout} path="/search/" component={Search} />
           <RouteWithLayout layout={Layout} path="/home/" component={Home} />
+          <RouteWithLayout layout={Layout} path="/search/" component={Search} />
+          <RouteWithLayout layout={Layout} path="/label/" component={Label} />
 
           <Route exac path="/register/" component={Register} />
           <Route exac path="/login/" component={Login} />
