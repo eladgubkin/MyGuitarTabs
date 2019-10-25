@@ -7,11 +7,14 @@ const toggleSearchComponent = () => dispatch => {
   });
 };
 
-// Toggle Result component
-const toggleResultComponent = () => dispatch => {
+// Toggle Sidebar component
+const toggleSidebarComponent = e => dispatch => {
+  if (e && e.type === 'keydown' && (e.key === 'Tab' || e.key === 'Shift')) {
+    return;
+  }
   dispatch({
-    type: types.TOGGLE_RESULT_COMPONENT
+    type: types.TOGGLE_SIDEBAR_COMPONENT
   });
 };
 
-export { toggleSearchComponent, toggleResultComponent };
+export { toggleSearchComponent, toggleSidebarComponent };

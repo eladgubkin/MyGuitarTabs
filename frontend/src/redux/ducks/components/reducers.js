@@ -2,7 +2,8 @@ import * as types from './types';
 
 const initialState = {
   showSearchComponent: false,
-  showResultComponent: false
+  showSidebarComponent: window.innerWidth > 1024,
+  sidebarWidth: 260 // 240
 };
 
 const components = (state = initialState, action) => {
@@ -13,10 +14,10 @@ const components = (state = initialState, action) => {
         showSearchComponent: !state.showSearchComponent
       };
 
-    case types.TOGGLE_RESULT_COMPONENT:
+    case types.TOGGLE_SIDEBAR_COMPONENT:
       return {
         ...state,
-        showResultComponent: true
+        showSidebarComponent: !state.showSidebarComponent
       };
 
     default:
