@@ -1,0 +1,129 @@
+#Search {
+  @include maxWidthHeight();
+  // max-width: 640px;
+  max-width: 492px;
+  margin: 0 auto;
+
+  .section {
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+      0 1px 3px 1px rgba(60, 64, 67, 0.149);
+    margin: 16px 0;
+
+    .title {
+      display: flex;
+      height: 40px;
+      padding: 1px;
+
+      .text {
+        font-weight: 500;
+        color: #202124;
+        font-size: 15px;
+        padding-left: 10px;
+        text-transform: capitalize;
+        display: flex;
+        align-self: center;
+      }
+
+      .btn {
+        user-select: none;
+        text-transform: capitalize;
+        color: #1a73e8;
+        padding: 0;
+
+        &:focus {
+          background: #ececed;
+        }
+      }
+
+      .grow {
+        flex: 1;
+      }
+    }
+
+    .boxlist,
+    .MuiCollapse-wrapperInner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 4px;
+    }
+
+    .box,
+    .box-collapse {
+      display: flex;
+      flex-direction: column;
+      @include centerFlex();
+      width: 24vw;
+      height: 24vw;
+      // max-width: 157px;
+      // max-height: 157px;
+      max-width: 120px;
+      max-height: 120px;
+      position: relative;
+      cursor: pointer;
+
+      img {
+        width: 20vw;
+        height: 20vw;
+        max-width: 30px;
+        max-height: 30px;
+      }
+
+      span {
+        color: #fff;
+        font-size: 13px;
+        font-weight: 400;
+        position: absolute;
+        bottom: 17px;
+      }
+    }
+  }
+
+  .section:focus {
+    outline: 2px solid #99bcf3;
+  }
+
+  .MuiCollapse-wrapperInner {
+    margin-top: 4px;
+  }
+
+  .instruments {
+    .boxlist .box,
+    .MuiCollapse-wrapperInner .box-collapse {
+      background: #a57e13;
+    }
+  }
+
+  .types {
+    animation-delay: 0.05s;
+
+    .boxlist .box,
+    .MuiCollapse-wrapperInner .box-collapse {
+      background: #1a73e8;
+    }
+  }
+
+  .labels {
+    animation-delay: 0.1s;
+
+    .boxlist .box,
+    .MuiCollapse-wrapperInner .box-collapse {
+      background: #f5f5f5;
+
+      span {
+        color: #202124;
+      }
+    }
+  }
+
+  .themes {
+    animation-delay: 0.15s;
+    .boxlist .box,
+    .MuiCollapse-wrapperInner .box-collapse {
+      background: #f5f5f5;
+
+      span {
+        color: #202124;
+      }
+    }
+  }
+}
