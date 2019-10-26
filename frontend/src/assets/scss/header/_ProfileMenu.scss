@@ -1,0 +1,64 @@
+#Menu {
+  position: absolute;
+
+  #menu-list-grow {
+    border: 1px solid #00000033;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    width: 270px;
+    height: 250px;
+  }
+
+  .maxWidthHeight {
+    @include maxWidthHeight();
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 120px auto;
+    grid-template-areas:
+      'avatar date'
+      'info logout';
+
+    .avatar {
+      grid-area: avatar;
+      @include centerFlex();
+
+      img {
+        height: 96px;
+        width: 96px;
+        border: none;
+      }
+    }
+
+    .info {
+      grid-area: info;
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        font-weight: bold;
+        white-space: nowrap;
+        color: #000;
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        margin-top: 20px;
+      }
+
+      .email {
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        color: #666;
+        white-space: nowrap;
+        margin-right: 9px;
+      }
+    }
+
+    .date {
+      grid-area: date;
+    }
+
+    .logout {
+      grid-area: logout;
+    }
+  }
+}
