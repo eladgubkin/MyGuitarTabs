@@ -2,27 +2,28 @@
 @import './functions';
 @import './variables';
 
-// Loading
-@import './Loading';
+// Common
+@import './common/Loading';
 
-// GuestLanding
-@import './GuestLanding';
-@import './Nav';
-@import './TypeWriter';
-@import './Button';
-@import './Presentation';
+// Landing
+@import './landing/GuestLanding';
+@import './landing/Nav';
+@import './landing/TypeWriter';
+@import './landing/Button';
+@import './landing/Presentation';
 
-// Layout
-@import './Header';
-@import './ProfileMenu';
-@import './Sidebar';
+// Header
+@import './header/Header';
+@import './header/ProfileMenu';
 
-// AuthLanding
-@import './AuthLanding';
-@import './Home';
-@import './Search';
-@import './Result';
-@import './Label';
+// Sidebar
+@import './sidebar/Sidebar';
+
+// Pages
+@import './pages/Home';
+@import './pages/Search';
+@import './pages/Result';
+@import './pages/Label';
 
 // Base Style
 *,
