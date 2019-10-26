@@ -1,0 +1,13 @@
+#GuestLanding {
+  @include maxWidthHeight();
+  font-family: 'Roboto', sans-serif;
+
+  .container {
+    @include maxWidthHeight();
+    display: grid;
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-template-rows: 76px 60px auto 60px;
+    grid-template-columns: auto;
+  }
+}
