@@ -5,6 +5,7 @@ import _ from 'lodash';
 
 // SVG
 import svgViewAgenda from '../../assets/svg/view-agenda.svg';
+import svgViewGrid from '../../assets/svg/view-grid-outline.svg';
 import svgMagnifyG from '../../assets/svg/magnify.svg';
 import svgClose from '../../assets/svg/close.svg';
 
@@ -57,6 +58,7 @@ const Header = props => {
     sidebarWidth
   } = props;
   const [searchString, setSearchString] = useState('');
+  const [svgView, setSvgView] = useState(svgViewGrid);
   const classes = useStyles(sidebarWidth);
 
   const onChange = e => {
@@ -155,8 +157,15 @@ const Header = props => {
           </>
         )}
         <>
-          <IconButton color="inherit" className="btn">
-            <img src={svgViewAgenda} alt="svgViewAgenda" />
+          <IconButton
+            color="inherit"
+            className="btn"
+            onClick={() => {
+              if (svgView === svgViewAgenda) setSvgView(svgViewGrid);
+              if (svgView === svgViewGrid) setSvgView(svgViewAgenda);
+            }}
+          >
+            <img src={svgView} alt="svgView" />
           </IconButton>
           <ProfileMenu />
         </>
