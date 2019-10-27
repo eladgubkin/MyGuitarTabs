@@ -694,6 +694,9 @@ function(module) {
 				ts.millennia++;
 				ts.centuries = 0;
 				/* falls through */
+
+				default:
+						return null
 			}
 	}
 
