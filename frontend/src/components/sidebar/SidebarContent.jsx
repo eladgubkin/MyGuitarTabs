@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 // SVG
 import svgGuitarAccoustic from '../../assets/svg/guitar-acoustic.svg';
@@ -27,7 +28,7 @@ const SidebarContent = props => {
 
   return (
     <div id="SidebarContent" className={classes.list} role="presentation">
-      <div className="logo">
+      <div className="logo" onClick={() => props.history.push('/home/')}>
         <h3>myguitartabs</h3>
       </div>
       <List>
@@ -84,4 +85,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { toggleSidebarComponent }
-)(SidebarContent);
+)(withRouter(SidebarContent));
