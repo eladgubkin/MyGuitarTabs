@@ -67,13 +67,19 @@ const RouteWithLayout = ({
 };
 
 RouteWithLayout.propTypes = {
+  // Auth
   auth: PropTypes.object.isRequired,
+
+  // Sidebar
   showSidebarComponent: PropTypes.bool.isRequired,
   sidebarWidth: PropTypes.number.isRequired
 };
 
 const mapStateToProps = state => ({
+  // Auth
   auth: state.auth,
+
+  // Sidebar
   showSidebarComponent: state.components.showSidebarComponent,
   sidebarWidth: state.components.sidebarWidth
 });
