@@ -59,11 +59,13 @@ const Sidebar = props => {
 };
 
 Sidebar.propTypes = {
+  // Sidebar
   toggleSidebarComponent: PropTypes.func.isRequired,
   showSidebarComponent: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
+  // Sidebar
   showSidebarComponent: state.components.showSidebarComponent
 });
 
