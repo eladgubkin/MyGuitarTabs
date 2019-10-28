@@ -1,8 +1,10 @@
 #TypeWriter {
-  @include maxWidthHeight();
+  width: 100%;
+  max-width: 1000px;
   display: flex;
   align-items: center;
   height: 60px;
+  margin: 0 auto;
 
   .underline {
     border-bottom: 1px solid black;
