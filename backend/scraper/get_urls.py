@@ -13,7 +13,8 @@ def get_urls(search_string):
     source = requests.get(url, headers=headers).text
 
     soup = {}
-    soup = json.loads(BeautifulSoup(source, 'lxml').find_all('script')[10].text
+    soup = json.loads(BeautifulSoup(source, 'lxml')
+                      .find_all('script')[7].text
                       .replace(r'window.UGAPP.store.page = ', '')
                       .replace(r';', '')
                       .replace(r'window.UGAPP.store.i18n = {}', ''))

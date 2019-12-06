@@ -11,7 +11,7 @@ def get_tabs(url):
 
     soup = {}
     soup = json.loads(BeautifulSoup(source, 'lxml')
-                      .find_all('script')[10].text
+                      .find_all('script')[7].text
                       .replace(r'window.UGAPP.store.page = ', '')
                       .replace(r';', '')
                       .replace(r'window.UGAPP.store.i18n = {}', ''))
@@ -27,12 +27,8 @@ def get_tabs(url):
         'tuning_name': deep_get(soup, 'data.tab_view.meta.tuning.name'),
         'tuning_value': deep_get(soup, 'data.tab_view.meta.tuning.value'),
         'difficulty': deep_get(soup, 'data.tab_view.meta.difficulty'),
-        'last_edit_by': deep_get(soup, 'data.tab_view.wiki_tab.username'),
-        'last_edit_by_id': deep_get(soup, 'data.tab_view.wiki_tab.user_id'),
         'content': deep_get(soup, 'data.tab_view.wiki_tab.content'),
-        'strummings': deep_get(soup, 'data.tab_view.wiki_tab.strummings'),
-        # 'contributors': deep_get(soup, 'data.tab_view.contributors'),
-        # 'recommended_tabs': deep_get(soup, 'data.recommended_tabs'),
+        'strummings': deep_get(soup, 'data.tab_view.wiki_tab.strummings')
     }
 
     return data
