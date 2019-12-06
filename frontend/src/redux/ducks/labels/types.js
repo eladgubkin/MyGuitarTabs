@@ -1,0 +1,6 @@
+const GET_LABELS = 'labels/GET_LABELS';
+const CREATE_LABEL = 'labels/CREATE_LABEL';
+const UPDATE_LABEL = 'labels/UPDATE_LABEL';
+const DELETE_LABEL = 'labels/DELETE_LABEL';
+
+export { GET_LABELS, CREATE_LABEL, UPDATE_LABEL, DELETE_LABEL };
