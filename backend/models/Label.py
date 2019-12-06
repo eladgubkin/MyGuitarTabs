@@ -6,4 +6,5 @@ class Label(db.Model):
 
     label_id = db.Column(db.String(32), primary_key=True)
     user_id = db.Column(db.String(32), db.ForeignKey('users.user_id'))
-    name = db.Column(db.String(50), nullable=False)
+    songs = db.relationship('Song', backref='label')
+    label_name = db.Column(db.String(50), nullable=False)
